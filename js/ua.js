@@ -28,7 +28,6 @@ if(sessionStorage.os_name == null){
 }else{
     ua();
 }
-
 function ua() {
     var head = document.getElementsByTagName('head')[0];
     head.innerHTML += "<style>.ua-list p{text-align:left;} .ua-list span{display:inline-block;width:70px;}.ua-list a{display:inline-block;margin: 0.125em 0.25em;padding: 0 0.25em;border-radius: 0.25em;background: var(--bg-color-secondary);color: var(--text-color-light);font-weight: bold;line-height: 2;}</style>"
@@ -43,13 +42,13 @@ function ua() {
             ualist[i].innerHTML += "<p><span>CPU</span>:<a href='/cpu/"+sessionStorage.cpu_architecture.toLowerCase().replace(/\s+/g, '')+".html'>"+sessionStorage.cpu_architecture+"</a></p>"
         }
         if(sessionStorage.device_vendor != 'undefined'){
-            ualist[i].innerHTML += "<p><span>Device</span>:<a href='/device/"+sessionStorage.device_vendor.toLowerCase().replace(/\s+/g,'')+".html'>"+sessionStorage.device_vendor+" "+sessionStorage.device_model+"</a></p>"
+            ualist[i].innerHTML += "<p><span>Device</span>:<a href='/device/"+sessionStorage.device_vendor.toLowerCase().replace(/\s+/g,'')+".html#"+sessionStorage.device_vendor.replace(/\s+/g, '')+sessionStorage.device_model.replace(/\s+/g, '')+"'>"+sessionStorage.device_vendor+" "+sessionStorage.device_model+"</a></p>"
         }
         if(sessionStorage.os_name != 'undefined'){
-            ualist[i].innerHTML += "<p><span>OS</span>:<a href='/os/"+sessionStorage.os_name.toLowerCase().replace(/\s+/g, '')+".html'>"+sessionStorage.os_name+" "+sessionStorage.os_version+" "+sessionStorage.os_num+"</a></p>"
+            ualist[i].innerHTML += "<p><span>OS</span>:<a href='/os/"+sessionStorage.os_name.toLowerCase().replace(/\s+/g, '')+".html#"+sessionStorage.os_name.replace(/\s+/g, '')+sessionStorage.os_version+sessionStorage.os_num.replace(/\s+/g, '')+"'>"+sessionStorage.os_name+" "+sessionStorage.os_version+" "+sessionStorage.os_num+"</a></p>"
         }
         if(sessionStorage.browser_name != 'undefined'){
-            ualist[i].innerHTML += "<p><span>Browser</span>:<a href='/browser/"+sessionStorage.browser_name.toLowerCase().replace(/\s+/g, '')+".html'>"+sessionStorage.browser_name+" "+sessionStorage.browser_version+"</a></p>"
+            ualist[i].innerHTML += "<p><span>Browser</span>:<a href='/browser/"+sessionStorage.browser_name.toLowerCase().replace(/\s+/g, '')+".html#"+sessionStorage.browser_name.replace(/\s+/g, '')+sessionStorage.browser_version.replace(/\s+/g, '')+"'>"+sessionStorage.browser_name+" "+sessionStorage.browser_version+"</a></p>"
         }
         ualist[i].innerHTML += "<p>The above information is obtained through the User Agent (UA) identification opened by the browser, and its accuracy is only for reference!</p>"
     }
