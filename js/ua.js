@@ -39,7 +39,7 @@ function ua() {
     if(ualist.length > 0){
         for (var i = 0; i < ualist.length; i++) {
         if(sessionStorage.cpu_architecture != 'undefined'){
-            ualist[i].innerHTML += "<p><span>CPU</span>:<a href='/cpu/"+sessionStorage.cpu_architecture.toLowerCase().replace(/\s+/g, '')+".html'>"+sessionStorage.cpu_architecture+"</a></p>"
+            ualist[i].innerHTML += "<p><span>CPU</span>:<a href='/cpu/"+sessionStorage.cpu_architecture.toLowerCase().replace(/\s+/g, '')+".html#"+sessionStorage.cpu_architecture.replace(/\s+/g, '')+"'>"+sessionStorage.cpu_architecture+"</a></p>"
         }
         if(sessionStorage.device_vendor != 'undefined'){
             ualist[i].innerHTML += "<p><span>Device</span>:<a href='/device/"+sessionStorage.device_vendor.toLowerCase().replace(/\s+/g,'')+".html#"+sessionStorage.device_vendor.replace(/\s+/g, '')+sessionStorage.device_model.replace(/\s+/g, '')+"'>"+sessionStorage.device_vendor+" "+sessionStorage.device_model+"</a></p>"
